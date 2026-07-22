@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [timeText, setTimeText] = useState("GÜNDEM ÖZETİ");
-
   useEffect(() => {
     // Türkiye saat dilimine göre sadece "saat" kısmını alıyoruz (Örn: "23")
     const currentHour = new Intl.DateTimeFormat("tr-TR", {
