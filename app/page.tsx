@@ -1,7 +1,23 @@
+"use client"; // Dinamik saat hesaplaması yapacağımız için Client Component'e çeviriyoruz
+
 import Image from "next/image";
-import AudioPlayer from "../components/AudioPlayer"; // Bileşeni içe aktarıyoruz
+import AudioPlayer from "../components/AudioPlayer"; 
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [timeText, setTimeText] = useState("GÜNDEM ÖZETİ");
+
+  useEffect(() => {
+    // Türkiye saat dilimine göre sadece "saat" kısmını alıyoruz (Örn: "23")
+    const currentHour = new Intl.DateTimeFormat("tr-TR", {
+      timeZone: "Europe/Istanbul",
+      hour: "2-digit",
+    }).format(new Date());
+    
+    // Formatı birleştirip state'e aktarıyoruz (Örn: "23:00 GÜNDEM ÖZETİ")
+    setTimeText(`${currentHour}:00 GÜNDEM ÖZETİ`);
+  }, []);
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
 
@@ -18,8 +34,9 @@ export default function Home() {
         <h1 className="text-xl font-extrabold tracking-widest text-white/90 uppercase">
           Gezo Yapay Zeka
         </h1>
-        <p className="text-sm text-gray-400 mt-2 font-medium tracking-wide">
-          19:00 GÜNDEM ÖZETİ
+        {/* Sabit 19:00 yerine dinamik state'imizi yazdırıyoruz */}
+        <p className="text-sm text-gray-400 mt-2 font-medium tracking-wide uppercase">
+          {timeText}
         </p>
       </div>
 
