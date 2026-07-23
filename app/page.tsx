@@ -8,35 +8,15 @@ export const dynamic = 'force-dynamic';
 async function getEditionTime() {
   try {
     const response = await fetch("https://api.gezoist.com/hourly_summary.json", {
-      cache: "no-store", 
+      cache: "no-store",
     });
 
     if (!response.ok) return "SON GÜNDEM ÖZETİ";
 
     const data = await response.json();
 
-    if (data?.generated_at) {
-      const dateObj = new Date(data.generated_at);
-      
-      const currentHour = parseInt(
-        new Intl.DateTimeFormat("tr-TR", {
-          timeZone: "Europe/Istanbul",
-          hour: "2-digit",
-        }).format(dateObj), 
-        10
-      );
-
-      let edition = "21:00"; 
-      
-      if (currentHour >= 5 && currentHour < 13) {
-        edition = "09:00"; 
-      } else if (currentHour >= 13 && currentHour < 19) {
-        edition = "14:00"; 
-      } else {
-        edition = "21:00"; 
-      }
-
-      return `${edition} GÜNDEM ÖZETİ`;
+    if (data?.edition_slot) {
+      return `${data.edition_slot} GÜNDEM ÖZETİ`;
     }
   } catch (error) {
     console.error("Zaman bilgisi çekilemedi:", error);
