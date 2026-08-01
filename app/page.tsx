@@ -62,18 +62,18 @@ export default async function Home() {
           Haberi Okumak İçin İndir
         </p>
 
-        
-          href="https://apps.apple.com/app/gezo-gündem/id6762355653"
+        <a
+          href="https://apps.apple.com/app/gezo-gundem/id6762355653"
           className="w-full h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/5 hover:bg-white/10 transition-colors cursor-pointer"
         >
-          <span className="text-sm font-medium text-gray-300">App Store'dan İndirin</span>
+          <span className="text-sm font-medium text-gray-300">App Store&apos;dan İndirin</span>
         </a>
 
-        
+        <a
           href="https://gundem.gezoist.com/indir?ref=web_landing"
           className="w-full h-12 bg-[#ffcc00]/90 text-black rounded-xl flex items-center justify-center border border-[#ffcc00] hover:bg-[#ffcc00] transition-colors cursor-pointer font-bold shadow-lg shadow-[#ffcc00]/20"
         >
-          <span className="text-sm">Google Play'den Alın</span>
+          <span className="text-sm">Google Play&apos;den Alın</span>
         </a>
       </div>
     </main>
