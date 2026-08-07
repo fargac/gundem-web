@@ -15,7 +15,7 @@ export default function ValueProps() {
           <div className="w-9 h-9 rounded-lg bg-[#1a1a24]/80 border border-white/5 flex items-center justify-center text-base shrink-0">
             {p.icon}
           </div>
-          <div>
+          <div className="text-left">
             <div className="text-sm font-semibold text-white/90">{p.title}</div>
             <div className="text-xs text-gray-500 leading-relaxed mt-0.5">{p.desc}</div>
           </div>
