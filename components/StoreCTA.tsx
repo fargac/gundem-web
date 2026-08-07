@@ -5,6 +5,8 @@ export default function StoreCTA() {
         
         <a
           href="https://apps.apple.com/app/gezo-gundem/id6762355653"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/5 hover:bg-white/10 transition-colors"
         >
           <span className="text-sm font-medium text-gray-300">App Store</span>
@@ -12,6 +14,8 @@ export default function StoreCTA() {
 
         <a
           href="https://gundem.gezoist.com/indir?ref=web_landing"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex-1 h-12 bg-[#ffcc00]/90 text-black rounded-xl flex items-center justify-center border border-[#ffcc00] hover:bg-[#ffcc00] transition-colors font-bold shadow-lg shadow-[#ffcc00]/20"
         >
           <span className="text-sm">Google Play&apos;den Al</span>
