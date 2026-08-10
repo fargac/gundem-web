@@ -19,8 +19,8 @@ export default function RootLayout({
     <html lang="tr">
       <body className={`${inter.className} bg-[#08080a] text-white antialiased`}>
         {children}
+        <GoogleAnalytics gaId="G-9CR3FF1CQC" />
       </body>
-      <GoogleAnalytics gaId="G-9CR3FF1CQC" />
     </html>
   );
 }
